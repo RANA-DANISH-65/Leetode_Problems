@@ -5,7 +5,6 @@ public class max_dif_bet_adj_el {
             int diff = nums[i] - nums[i + 1];
             diff = diff < 0 ? (-1 * diff) : diff;
             max = Math.max(max, diff);
-
         }
         int newDiff = nums[0] - nums[nums.length - 1];
         return Math.max(max, newDiff<0?(-1*newDiff):newDiff);
