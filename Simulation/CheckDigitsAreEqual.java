@@ -1,16 +1,15 @@
 public class CheckDigitsAreEqual {
     public boolean hasSameDigits(String s) {
-        int n = s.length();
-        int[] digits = new int[n];
-        for (int i = 0; i < n; i++) {
-            digits[i] = s.charAt(i);
-        }
-        while (n > 2) {
-            for (int i = 0; i < n - 1; i++) {
-                digits[i] = (digits[i] + digits[i + 1]) % 10;
+        while (s.length() > 2) {
+            StringBuilder newString = new StringBuilder();
+            for (int i = 0; i < s.length() - 1; i++) {
+                int firstDigit = s.charAt(i) - '0';
+                int secondDigit = s.charAt(i + 1) - '0';
+                int thirdDigit = (firstDigit + secondDigit) % 10;
+                newString.append(thirdDigit);
             }
-            n--;
+            s = newString.toString();
         }
-        return digits[0] == digits[1];
+        return  s.charAt(0) == s.charAt(1);
     }
 }
