@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class CopyListWithRandomPointer {
     public ListNode copyRandomList(ListNode head) {
-        if (head == null) return head;
+        if (head == null) return null;
         HashMap<ListNode, ListNode> map = new HashMap<>();
         ListNode temp = head;
         while (temp != null) {
